@@ -20,10 +20,9 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 
-import first_den.gui_first.testClass;
 
 
-public class taslak_gui extends JFrame 
+public class gui extends JFrame 
 { 
 	/**
 	 * 
@@ -43,7 +42,7 @@ public class taslak_gui extends JFrame
 	private JTextField expected_value;
 	private JButton getcode;
 	private JButton testbutton; 
-	public gui_second() 
+	public gui() 
 	{
 				 
 		class_ = new JLabel("Class name:"); 
@@ -58,6 +57,7 @@ public class taslak_gui extends JFrame
 		func_name = new JTextField(10);
 		this.add(func_name);
 		
+
 		p1 = new JLabel("Parameters:"); 
 		this.add(p1); 
 		params = new JTextField(20);
@@ -74,12 +74,6 @@ public class taslak_gui extends JFrame
 		
 		params.setEditable(true);
 		
-		/*p2 = new JLabel("Second Parameter:"); 
-		this.add(p2); 
-		param2 = new JTextField(20);
-		//param2.setEditable(false);
-		this.add(param2);
-*/
 		
 		expected = new JLabel("Expected Value:"); 
 		this.add(expected); 
@@ -99,9 +93,10 @@ public class taslak_gui extends JFrame
 		this.add(picLabel);
 		
 		
+		// TEMEL PENCERE ÝSLEVLERÝ 
 		this.setTitle("DEVOPS Testing Enviroment"); 
 		this.setLayout(new FlowLayout()); 
-		this.setBounds(150,150,440,400); 
+		this.setBounds(150,150,445,400); 
 		this.setVisible(true); 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
