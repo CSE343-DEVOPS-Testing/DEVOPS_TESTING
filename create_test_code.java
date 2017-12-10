@@ -63,22 +63,15 @@ public class create_test_code {
 				if (params_types.get(i) == "int" || params_types.get(i) =="double"||
 						params_types.get(i) == "Integer" || params_types.get(i) =="Double")
 					content2 +=paramaters.get(i) ;
-				else  //string falan
-					content2 += "\"" +paramaters.get(i).toString() +"\"";
 				
-					
-				
-				if(i != paramaters.size()-1)
-					content2 +=",";
-				
+
 			}
 			content2 +=");\n"+
 			"\rBufferedWriter bw = null;\r\n" + 
 			"		FileWriter fw = null;\r\n" + 
 			"\r\n" + 
 			"		try {\r\n" + 
-			"			String content = \"\";\r\n" + 
-			"			if(result.equals(";
+
 			
 			if( params_return_types == "int" || params_return_types =="double"||
 					params_return_types == "Integer" || params_return_types =="Double") {
@@ -97,30 +90,7 @@ public class create_test_code {
 					"			fw = new FileWriter(\"test_result.txt\");\r\n" + 
 					"			bw = new BufferedWriter(fw);\r\n" + 
 					"			bw.write(content);\r\n" + 
-					"\r\n" + 
-					"			System.out.println(\"Done\");\r\n" + 
-					"\r\n" + 
-					"		} catch (IOException e) {\r\n" + 
-					"\r\n" + 
-					"			e.printStackTrace();\r\n" + 
-					"\r\n" + 
-					"		} finally {\r\n" + 
-					"\r\n" + 
-					"			try {\r\n" + 
-					"\r\n" + 
-					"				if (bw != null)\r\n" + 
-					"					bw.close();\r\n" + 
-					"\r\n" + 
-					"				if (fw != null)\r\n" + 
-					"					fw.close();\r\n" + 
-					"\r\n" + 
-					"			} catch (IOException ex) {\r\n" + 
-					"\r\n" + 
-					"				ex.printStackTrace();\r\n" + 
-					"\r\n" + 
-					"			}\r\n" + 
-					"\r\n" + 
-					"		}}}";
+
 			fw = new FileWriter(path_of_test_file);
 			bw = new BufferedWriter(fw);
 			bw.write(content);
