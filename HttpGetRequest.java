@@ -8,7 +8,7 @@ public class HttpGetRequest {
 
     public static void main(String[] args) {
         try {
-            String urlToGet = "Enter here a URL";
+            String urlToGet = "Enter here a URL to get a JSON object";
             HttpGetRequest.getRequest(urlToGet);
         } catch (Exception e) {
             e.printStackTrace();
@@ -33,7 +33,7 @@ public class HttpGetRequest {
 
         contentReader.close();
 
-        System.out.println(tempStr.toString());
+        //System.out.println(tempStr.toString());
 
         JSONObject resultJson = new JSONObject(tempStr.toString());
 
