@@ -1,4 +1,4 @@
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class ParserClass {
 
@@ -24,16 +24,16 @@ public class ParserClass {
 
     }
 
-    public static Vector<Vector<String>> lineParser(String parsedChar){
+    public static ArrayList<ArrayList<String>> lineParser(String parsedChar){
 
-        Vector<Vector<String>> s = new Vector<Vector<String>>();
-        Vector<String> subVec = new Vector<>();
+        ArrayList<ArrayList<String>> s = new ArrayList<ArrayList<String>>();
+        ArrayList<String> subVec = new ArrayList<>();
 
         int closeIndex= parsedChar.indexOf(")");
 
         while(closeIndex != -1){
 
-            subVec = new Vector<>();
+            subVec = new ArrayList<>();
             String tempString = parsedChar.substring(0,closeIndex+1);
 
 
@@ -90,12 +90,36 @@ public class ParserClass {
 
     public static void main(String[] args) throws ClassNotFoundException {
         //String methodLine=null;
-        Vector<Vector<String>> listOfLists = new Vector<Vector<String>>();
+        ArrayList<ArrayList<String>> listOfLists = new ArrayList<ArrayList<String>>();
+        
+        ArrayList<String> nameOfMethods = new ArrayList<String>();
+        ArrayList<String> returnTypes = new ArrayList<String>(); 
+        ArrayList<ArrayList<String>> parametersType = new ArrayList<ArrayList<String>>();
+        ArrayList<String> subArrayList = new ArrayList<String>();
+        
         String methodLine = findMethodLine("calculator");
         listOfLists = lineParser(methodLine);
 
-        for(int i=0; i<listOfLists.size(); i++)
+        for(int i=0; i<listOfLists.size(); i++){
+        	subArrayList = new ArrayList<>();
             System.out.println(listOfLists.get(i));
-
+        	
+        	nameOfMethods.add(listOfLists.get(i).get(2));
+        	returnTypes.add(listOfLists.get(i).get(1));
+        	
+        	for(int j=3; j<listOfLists.get(i).size(); j++)		
+        		subArrayList.add(listOfLists.get(i).get(j));
+        	
+        	parametersType.add(subArrayList);
+        			
+        }    
+        
+          System.out.println("\n"+nameOfMethods);   
+          System.out.println(returnTypes+"\n");
+          
+          for(int i=0; i<parametersType.size(); i++)
+				System.out.println(parametersType.get(i));
+            
+   
     }
 }
