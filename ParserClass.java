@@ -43,14 +43,14 @@ public class ParserClass {
             try{
            
             TimeUnit.MILLISECONDS.sleep(500);
-            for(int i=0; i<tempPath.size(); i++){
+           /* for(int i=0; i<tempPath.size(); i++){
                 File file = new File(tempPath.get(i));
                 if(file.delete())
                     ;
                 else
                     System.out.println("Delete file operation is failed.");
             
-            }
+            }*/
 
             }catch(Exception e){
 
