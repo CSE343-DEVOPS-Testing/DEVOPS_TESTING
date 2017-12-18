@@ -11,10 +11,22 @@ public class ParserClass {
     public ArrayList<String> returnTypes = new ArrayList<String>();
     public ArrayList<ArrayList<String>> parametersType = new ArrayList<ArrayList<String>>();
 
+
+    public ArrayList<String> getNameOfMethods(){
+        return nameOfMethods;
+    }
+
+    public ArrayList<String> getReturnTypes(){
+        return returnTypes;
+    }
+
+    public ArrayList<ArrayList<String>> getParametersType(){
+        return parametersType;
+    }
+
     public void myParser(String path) throws Exception {
 
         FileInputStream in = new FileInputStream(path);
-
         CompilationUnit cu;
         try {
             // parse the file
@@ -25,12 +37,11 @@ public class ParserClass {
         // visit and print the methods names
         cu.accept(new MethodVisitor(), null);
 
-        System.out.println(nameOfMethods);
-        System.out.println(returnTypes);
-        System.out.println(parametersType);
+     //   System.out.println(nameOfMethods);
+     //   System.out.println(returnTypes);
+     //   System.out.println(parametersType);
 
     }
-
 
     public class MethodVisitor extends VoidVisitorAdapter {
 
