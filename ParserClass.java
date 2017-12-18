@@ -61,7 +61,7 @@ public class ParserClass {
                     nameOfMethods.add(n.getName().toString());
                     returnTypes.add(n.getType().toString());
                     for(int i=0; i<n.getParameters().size(); i++){
-                        subArrayList.add(String.valueOf(n.getParameters().get(i)));
+                        subArrayList.add(String.valueOf(n.getParameters().get(i)).substring(0, String.valueOf(n.getParameters().get(i)).indexOf(" ")));
                     }
                     parametersType.add(subArrayList);
 
