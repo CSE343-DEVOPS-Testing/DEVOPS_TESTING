@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class JavaParserMain {
+public class ParserClassMain {
 
     public static void main(String args[]) throws Exception {
 
