@@ -5,7 +5,7 @@ import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 
-public class Main {
+public class ParserClass {
 
     public static class MethodPrinter {
 
